@@ -5,6 +5,11 @@
 # 查看 Git 版本
 git --version
 ```
+### setting
+```bash
+git config --global user.name "user's name"
+git config --global user.email "user's email"
+```
 ### git init
 ```bash
 # Initializing a Git Repository
