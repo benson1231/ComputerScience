@@ -1,19 +1,22 @@
-### Ref:https://www.codecademy.com/learn/learn-git/modules/learn-git-git-workflow-u/cheatsheet 
-# git Commands
-### git version
+### [參考網站](https://www.codecademy.com/learn/learn-git/modules/learn-git-git-workflow-u/cheatsheet)
+# git 初始化與配置
+### get git version
 ```bash
-# 查看 Git 版本
 git --version
-```
-### setting
-```bash
-git config --global user.name "user's name"
-git config --global user.email "user's email"
 ```
 ### git init
 ```bash
 # Initializing a Git Repository
 git init
+```
+### git setting
+```bash
+git config --global user.name "user's name"
+git config --global user.email "user's email"
+```
+### list git setting
+```bash
+git config --list
 ```
 ### git status
 ```bash
