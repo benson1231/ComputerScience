@@ -1,24 +1,24 @@
 ### [參考網站](https://www.codecademy.com/learn/learn-git/modules/learn-git-git-workflow-u/cheatsheet)
 
 # 1. basic git setting
-### get git version
+### Get git version
 ```bash
 git --version
 ```
-### git initialize
+### Initialize a Git repository
 ```bash
 git init
 ```
-### set author name and email
+### Set author name and email
 ```bash
 git config --global user.name "USER_NAME"
 git config --global user.email "USER_EMAIL"
 ```
-### list git config
+### List Git configurations
 ```bash
 git config --list
 ```
-### git config
+### Add a Git alias
 ```bash
 git config --global alias.glop "log --pretty=format:'%h %s' --graph"
 # 使用別名顯示提交歷史：
