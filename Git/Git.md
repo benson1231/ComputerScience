@@ -52,20 +52,20 @@ git log --oneline --graph   # 以圖形方式顯示提交歷史
 git diff FILE_NAME                  # 查看文件改動
 git diff COMMIT_SHA -- FILE_NAME    # 比較指定提交版本與文件
 ```
-### restore to last commit
+### Restore file to last commit
 ```bash
 git restore FILE_NAME
 ```
 ### reset
 ```bash
+git reset --hard COMMIT_SHA    # 完全撤銷commit，刪除改動
 git reset --soft COMMIT_SHA    # 撤銷上一個commit，保留改動
 git reset --mixed COMMIT_SHA   # 撤銷commit並保留改動（不進入暫存區）
-git reset --hard COMMIT_SHA    # 完全撤銷commit，刪除改動
 git reset HEAD FILE_NAME       # 撤銷已暫存的文件
 ```
-### reset
+### Discard local changes
 ```bash
-git checkout -- FILE_NAME
+git checkout COMMIT_SHA -- FILE_NAME
 ```
 ### .gitignore file to ignore track
 ```bash
