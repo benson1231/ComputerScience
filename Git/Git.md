@@ -1,6 +1,6 @@
 ### [參考網站](https://www.codecademy.com/learn/learn-git/modules/learn-git-git-workflow-u/cheatsheet)
 
-# git basic setting
+# 1. basic git setting
 ### get git version
 ```bash
 git --version
@@ -25,7 +25,7 @@ git config --global alias.glop "log --pretty=format:'%h %s' --graph"
 git glop
 ```
 
-# basic git command
+# 2. basic git command
 ### git status
 ```bash
 git status
@@ -58,21 +58,27 @@ git restore FILE_NAME
 ```
 ### reset
 ```bash
-git reset --soft HEAD~1   # 撤銷上一個commit，保留改動
-git reset --mixed HEAD~1  # 撤銷commit並保留改動（不進入暫存區）
-git reset --hard HEAD~1   # 完全撤銷commit，刪除改動
+git reset --soft COMMIT_SHA    # 撤銷上一個commit，保留改動
+git reset --mixed COMMIT_SHA   # 撤銷commit並保留改動（不進入暫存區）
+git reset --hard COMMIT_SHA    # 完全撤銷commit，刪除改動
+git reset HEAD FILE_NAME       # 撤銷已暫存的文件
+```
+### reset
+```bash
+git checkout -- FILE_NAME
 ```
 ### .gitignore file to ignore track
 ```bash
 *.png   # 忽略所有 .png 文件
 ```
 
-# branch commands
+# 3. branch commands
 ### git branch
 ```bash
 git branch                     # list branchs
 git branch BRANCH_NAME         # create branch
 git branch -d BRANCH_NAME      # delete branch
+git branch -M main             # create main branch
 ```
 ### switch branch
 ```bash
@@ -85,33 +91,45 @@ git checkout HEAD FILE_NAME
 git merge BRANCH_NAME
 ```
 
-# remote command
+# 4. remote command
 ### git clone
 ```bash
 git clone https://github.com/benson1231/git_test.git
 ```
 ### get remote information
 ```bash
-git remote -v
-git remote add origin https://github.com/benson1231/git_test.git     # 添加遠程repo
-```
-### git remote
-```bash
-# 設置分支名稱
-git branch -M main
+git remote -v                       # 查看遠程repo
+git remote add origin REPO_NAME     # 添加遠程repo
+git remote remove REPO_NAME         # 移除遠程repo
 ```
 ### git push
 ```bash
-# 推送到遠程repo
-git push -u origin main
+git push origin BRANCH_NAME         # 推送到遠程repo
+git push origin --tags              # 推送本地標籤到遠程
 ```
 ### git pull
 ```bash
-# 從遠程倉庫拉取最新內容並自動合併到當前分支
-git pull origin branch_name
+git pull origin BRANCH_NAME         # 從遠程倉庫拉取最新內容並自動合併到當前分支
 ```
 ### git fetch
 ```bash
-# 從遠程倉庫獲取最新的提交歷史與分支更新，但不更新本地工作區
-git fetch
+git fetch                           # 從遠程倉庫獲取最新的提交歷史與分支更新，但不更新本地工作區
+```
+
+# 5. advance commands
+### Save changes temporarily
+```bash
+git stash
+```
+### Apply the last stashed changes
+```bash
+git stash apply
+```
+### Garbage collection
+```bash
+git gc
+```
+### Remove untracked files
+```bash
+git clean -f
 ```
