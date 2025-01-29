@@ -2,6 +2,9 @@
 
 Regular expressions (regex) are sequences of characters that define search patterns. They are widely used in text processing, searching, and validation.
 
+**Reference:** [GeekHour youtube video](https://www.youtube.com/watch?v=uPBtum7QRvw)
+**Practice:** [Regexr](https://regexr.com/)
+
 ## 1. Basic and Quantifier Syntax
 
 | Symbol | Description | Example | Matches |
