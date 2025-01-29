@@ -2,7 +2,7 @@
 
 Regular expressions (regex) are sequences of characters that define search patterns. They are widely used in text processing, searching, and validation.
 
-## 1. Basic Syntax
+## 1. Basic and Quantifier Syntax
 
 | Symbol | Description | Example | Matches |
 |--------|------------|---------|---------|
@@ -18,7 +18,14 @@ Regular expressions (regex) are sequences of characters that define search patte
 | `\|` | OR operator (matches either pattern) | `cat\|dog` | `cat`, `dog` |
 | `()` | Groups expressions | `(ab)+` | `ab`, `abab`, `ababab` |
 
-## 2. Character Classes
+## 2. Greedy vs. Non-Greedy Matching
+
+| Type | Symbol | Description | Example | Matches |
+|------|--------|------------|---------|---------|
+| Greedy | `.*` | Matches as much text as possible | `a.*b` on `axxxxb` | `axxxxb` |
+| Non-Greedy | `.*?` | Matches the shortest possible text | `a.*?b` on `axxxxb` | `axb` |
+
+## 3. Character Classes
 
 | Character Class | Description | Example | Matches |
 |----------------|------------|---------|---------|
@@ -30,36 +37,23 @@ Regular expressions (regex) are sequences of characters that define search patte
 | `[a-zA-Z0-9]` | Matches any alphanumeric character | `[a-zA-Z0-9]` | `a`, `B`, `3` |
 | `.` | Matches any character except newline | `.` | `a`, `1`, `@` |
 
-## 3. Predefined Character Classes
-
-| Symbol | Description | Equivalent To |
-|--------|------------|---------------|
-| `\d` | Matches any digit | `[0-9]` |
-| `\D` | Matches any non-digit | `[^0-9]` |
-| `\w` | Matches any word character (alphanumeric + `_`) | `[a-zA-Z0-9_]` |
-| `\W` | Matches any non-word character | `[^a-zA-Z0-9_]` |
-| `\s` | Matches any whitespace character | `[]` |
-| `\S` | Matches any non-whitespace character | `[^\s]` |
-
-## 4. Anchors
+## 4. Grouping and Backreferences
 
 | Symbol | Description | Example | Matches |
 |--------|------------|---------|---------|
-| `^` | Matches start of a line | `^Hello` | `Hello` at the beginning |
-| `$` | Matches end of a line | `world$` | `world` at the end |
-| `\b` | Matches a word boundary | `\bcat\b` | `cat` as a whole word |
-| `\B` | Matches a non-word boundary | `\Bcat\B` | `scat`, `catalog` |
+| `(...)` | Capturing group | `(abc)` | Matches `abc` and stores it in memory |
+| `(?:...)` | Non-capturing group | `(?:abc)` | Matches `abc` but does not store it |
+| `\1, \2, ... ($1, $2, ...)` | Backreference to captured group | `(\w+) \1` | Matches `hello hello`, `abc abc` |
 
-## 5. Lookaheads and Lookbehinds
+### Example Usage of Backreferences
 
-| Type | Symbol | Description | Example | Matches |
-|------|--------|------------|---------|---------|
-| Positive Lookahead | `(?=...)` | Matches if the next part exists | `foo(?=bar)` | Matches `foo` only if followed by `bar` |
-| Negative Lookahead | `(?!...)` | Matches if the next part does NOT exist | `foo(?!bar)` | Matches `foo` only if NOT followed by `bar` |
-| Positive Lookbehind | `(?<=...)` | Matches if preceded by the specified part | `(?<=foo)bar` | Matches `bar` only if preceded by `foo` |
-| Negative Lookbehind | `(?<!...)` | Matches if NOT preceded by the specified part | `(?<!foo)bar` | Matches `bar` only if NOT preceded by `foo` |
+```regex
+(\d{3})-(\d{3})-(\d{4})
+```
+- Matches phone numbers formatted as `123-456-7890`
+- `\1`, `\2`, and `\3` refer to the first, second, and third captured groups respectively.
 
-## 6. Flags
+## 5. Flags
 
 | Flag | Description |
 |------|------------|
@@ -69,7 +63,7 @@ Regular expressions (regex) are sequences of characters that define search patte
 | `s` | Dotall mode (`.` matches newline) |
 | `x` | Ignore whitespace for readability |
 
-## 7. Common Use Cases
+## 6. Common Use Cases
 
 ### Matching Email Addresses
 ```regex
