@@ -2,8 +2,20 @@
 
 Regular expressions (regex) are sequences of characters that define search patterns. They are widely used in text processing, searching, and validation.
 
-**Reference:** [GeekHour youtube video](https://www.youtube.com/watch?v=uPBtum7QRvw)
+**Reference:** [GeekHour youtube video](https://www.youtube.com/watch?v=uPBtum7QRvw)  
 **Practice:** [Regexr](https://regexr.com/)
+
+---
+
+## Table of Contents
+1. [Basic and Quantifier Syntax](#1-basic-and-quantifier-syntax)
+2. [Greedy vs. Non-Greedy Matching](#2-greedy-vs-non-greedy-matching)
+3. [Character Classes](#3-character-classes)
+4. [Grouping and Backreferences](#4-grouping-and-backreferences)
+5. [Flags](#5-flags)
+6. [Common Use Cases](#6-common-use-cases)
+
+---
 
 ## 1. Basic and Quantifier Syntax
 
