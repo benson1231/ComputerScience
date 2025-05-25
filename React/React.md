@@ -4,7 +4,7 @@ npm creat vite@latest
 ```
 #
 ```bash
- cd react-training
+cd react-training
 ```
 # 
 ```bash
