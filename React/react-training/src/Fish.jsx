@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { IoFish } from "react-icons/io5";
-import styles from './Fish.module.css';
+import styles from "./Fish.module.css";
 
 function Fish() {
   const [speak, setSpeak] = useState(false);
@@ -11,8 +11,8 @@ function Fish() {
 
   return (
     <>
-      <IoFish className={styles['fish-icon']} onClick={handleClick} />
-      {speak && <div className={styles.speech}>我是一隻鯖魚</div>}
+      <IoFish className={styles["fish-icon"]} onClick={handleClick} />
+      {speak && <div className={styles.speech}>我是一隻鯖魚～肥瘦相間</div>}
     </>
   );
 }
