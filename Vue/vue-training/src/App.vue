@@ -18,6 +18,7 @@ let checked = false;
   </header>
 
   <main>
+    <button class="btn btn-success">Click me</button>
     <p>{{ message }}</p>
     <p>{{ message.toUpperCase() }}</p>
     <p v-html="word"></p>
