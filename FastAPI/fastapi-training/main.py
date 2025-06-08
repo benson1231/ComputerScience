@@ -105,3 +105,22 @@ def add(body=Body(None)):
     data=json.loads(body)
     print(data)
     return {"ok": True, "result": data["X"]}
+
+
+# database
+import mysql.connector
+
+con=mysql.connector.connect(
+    user="root",
+    password="12345678",
+    host="localhost",
+    database="fastapi"
+)
+print("Database connected")
+
+@app.get("/createMessage")
+def createMessage(author: Annotated[str, None], content: Annotated[str, None]):
+    cursor = con.cursor()
+    cursor.execute("INSERT INTO message(author, content) VALUES(%s, %s)", [author, content])
+    con.commit()
+    return {"ok": True}
