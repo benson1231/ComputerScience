@@ -1,0 +1,64 @@
+.navbar {
+    position: fixed;
+    /* 固定定位 */
+    top: 0;
+    /* 置頂 */
+    left: 0;
+    /* 從左側開始 */
+    width: 100%;
+    /* 寬度撐滿整個視窗 */
+    height: 60px;
+    /* 固定高度，方便調整內容 margin */
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    /* 確保在最上層 */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 其他內部樣式保持不變 */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    user-select: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #f0a500;
+}
+
+/* 響應式漢堡選單及其他樣式依需求調整 */
+
+/* 主內容區需加上 margin-top 避免被遮擋 */
+.main-content {
+    margin-top: 60px;
+    /* 與 navbar 高度相同 */
+}
