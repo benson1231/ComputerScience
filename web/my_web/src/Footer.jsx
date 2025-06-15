@@ -1,25 +1,15 @@
-import "./profilecard.css";
+import React from "react";
+import "./Footer.css";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 import { FaBookOpen } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-function ProfileCard() {
+function Footer() {
   return (
-    <section className="profile-card">
-      <div className="profile-left">
-        <img src="./profile.jpeg" alt="Chin-Yu Lee" className="profile-photo" />
-      </div>
-      <div className="profile-right">
-        <h1 className="profile-name">Chin-Yu Lee (李清宇)</h1>
-        <p className="profile-title">
-          Research Fellow in Precision Medicine
-          <br />
-          Bioinformatics Engineer
-          <br />
-          Medical Technologist
-        </p>
-        <div className="profile-social">
+    <footer id ="footer" className="site-footer">
+      <div className="wrapper">
+        <div className="footer-col">
           <a
             href="https://github.com/benson1231"
             target="_blank"
@@ -57,9 +47,14 @@ function ProfileCard() {
             <MdEmail size={48} />
           </a>
         </div>
+        <div className="footer-col">
+          <div className="contact-list">
+            <p>&copy; {new Date().getFullYear()} Chin-Yu Lee</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
-export default ProfileCard;
+export default Footer;

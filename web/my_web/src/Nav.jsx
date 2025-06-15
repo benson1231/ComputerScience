@@ -5,7 +5,7 @@ const menuItems = [
   { href: "#bio", label: "About Me" },
   { href: "#pub", label: "Portfolio" },
   { href: "#publications", label: "Certifications" },
-  { href: "#contact", label: "Contact" },
+  { href: "#footer", label: "Contact" },
 ];
 
 function Nav() {

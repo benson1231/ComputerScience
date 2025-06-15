@@ -33,7 +33,7 @@
 .profile-photo {
     width: 80%;
     max-width: 400px;
-    border-radius: 70%;
+    border-radius: 30%;
     border: 5px solid #555;
     object-fit: cover;
 }
